@@ -1,341 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+			integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Frontend Mentor | Chat app</title>
+	</head>
+	<body>
+		<div class="back-model-top"></div>
+		<div class="back-model-bottom"></div>
+		<main>
+			<section class="phone">
+				<div class="phone-indent"></div>
+				<div class="header">
+					<i class="fas fa-chevron-left"></i>
+					<img class="avatar" src="./images/avatar.jpg" alt="" />
+					<div class="info">
+						<h1 class="name">Samuel Green</h1>
+						<p class="status">Available to Walk</p>
+					</div>
+					<i class="fas fa-ellipsis-v"></i>
+				</div>
 
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+				<div class="main-body">
+					<div class="messages">
+						<p class="message m-l">
+							That sounds great. I’d be happy with that.
+						</p>
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+						<p class="message m-l">
+							Could you send over some pictures of your dog, please?
+						</p>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Chat app</title>
+						<div class="message images">
+							<img src="./images/dog-image-1.jpg" alt="" />
+							<img src="./images/dog-image-2.jpg" alt="" />
+							<img src="./images/dog-image-3.jpg" alt="" />
+						</div>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+						<p class="message m-r">
+							Here are a few pictures. She’s a happy girl!
+						</p>
 
-    body{
-      font-family: 'Rubik', sans-serif;
-      background: hsl(270, 20%, 96%);
-      display: grid;
-      place-items: center;
-      position: relative;
-    }
+						<p class="message m-r">Can you make it?</p>
 
-    .back-model-top{
-      height: 700px;
-      width: 400px;
-      border-radius: 300px;
-      position: absolute;
-      z-index: -1;
-    }
+						<p class="message m-l">
+							She looks so happy! The time we discussed works. How long shall I
+							take her out for?
+						</p>
 
-    .back-model-top{
-      top: -200px;
-      left: -200px;
-      background: linear-gradient(hsl(293, 100%, 63%), hsl(264, 100%, 61%));
-    }
+						<div class="message m-l walk">
+							<div class="first-half">
+								<div class="radio"></div>
+								<p class="walk-time">30 minute walk</p>
+							</div>
+							<h2 class="price">$29</h2>
+						</div>
 
-    main{
-      width: 325px;
-      margin-top: 4rem;
-      display: grid;
-      place-items: center;
-    }
+						<div class="message m-l walk">
+							<div class="first-half">
+								<div class="radio"></div>
+								<p class="walk-time">1 hour walk</p>
+							</div>
+							<h2 class="price">$49</h2>
+						</div>
+					</div>
+					<div class="input">
+						<p class="placeholder">Type a message…</p>
+						<i class="fas fa-chevron-circle-right"></i>
+					</div>
+				</div>
+			</section>
 
-    .phone{
-      margin-bottom: 5rem;
-      position: relative;
-      background: hsl(270, 20%, 96%);
-      box-shadow: 0 0 0 10px #fff,
-                  15px 15px 30px 5px rgba(0, 0, 0, .2);
-      border-radius: 25px;
-      overflow: hidden;
-      width: 270px;
-    }
-
-    .low-t{
-      font-size: 2.5rem;
-      color: hsl(271, 36%, 24%);
-      margin-bottom: 2rem;
-    }
-
-    .low-t,
-    .low-p{
-      text-align: center;
-    }
-
-    .low-p{
-      line-height: 2rem;
-      font-size: 1.1rem;
-      color: hsl(270, 7%, 64%);
-      margin-bottom: 4rem;
-    }
-
-    .avatar{
-      margin-right: 10px;
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-    }
-
-    .header{
-      padding: 15px 15px;
-      padding-top: 30px;
-      display: flex;
-      align-items: center;
-      color: #fff;
-      margin-bottom: 10px;
-      background: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
-      box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
-    }
-
-    .phone-indent{
-      top: -15px;
-      left: 60px;
-      position: absolute;
-      width: 160px;
-      height: 35px;
-      border-radius: 50px;
-      background: #fff;
-    }
-
-    .fa-chevron-left{
-      margin-right: 10px;
-    }
-
-    .name{
-      font-size: 1rem;
-      font-weight: 500;
-    }
-
-    .status{
-      font-size: .8rem;
-      color: hsl(276, 100%, 81%);
-    }
-
-    .info{
-      margin-right: 50px;
-    }
-
-    .images img{
-      width: 49px;
-      height: 49px;
-      border-radius: 15px;
-    }
-
-    .message{
-      max-width: 70%;
-      margin-bottom: 10px;
-      padding: 10px;
-      font-size: .7rem;
-    }
-
-    .messages{
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 10px;
-    }
-
-    .m-l{
-      background: hsl(270, 20%, 88%);
-      border-radius: 15px 15px 15px 5px;
-      color: hsl(276, 55%, 52%);
-    }
-
-    .m-r{
-      background: #fff;
-      border-radius: 15px 15px 5px 15px;
-      color: hsl(271, 15%, 43%);
-    }
-
-    .m-r,
-    .images{
-      align-self: flex-end;
-    }
-    .images{
-      margin-bottom: 5px;
-    }
-
-    .walk{
-      background: linear-gradient(to left, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .radio{
-      width: 15px;
-      height: 15px;
-      border: 1px #fff solid;
-      border-radius: 50%;
-      margin-right: 5px;
-    }
-
-    .price{
-      font-size: .9rem;
-    }
-
-    .first-half{
-      display: flex;
-      align-items: center;
-    }
-
-    .main-body{
-      padding: 10px;
-    }
-    
-    .input{
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 5px 5px;
-      border-radius: 25px;
-    }
-
-    .placeholder{
-      color: hsl(206, 6%, 79%);
-      font-size: .7rem;
-      margin-left: 10px;
-    }
-
-    .fa-chevron-circle-right{
-      color:hsl(271, 36%, 24%);
-      font-size: 25px;
-    }
-
-    @media(min-width: 1000px){
-      main{
-        grid-template-columns: 1fr .75fr 3fr;
-        width: 1000px;
-        gap: 2rem;
-        max-height: 550px;
-      }
-
-      .phone{
-        grid-column: 1;
-      }
-
-      .low-text{
-        grid-column: 3 / span 2;
-      }
-
-      .low-t,
-      .low-p{
-        text-align: left;
-      }
-
-      .phone{
-        transform: scale(.8);
-        margin-top: 0;
-      }
-
-      .back-model-top{
-        left: -100px;
-        top: -180px;
-      }
-    }
-
-    @media(min-width: 1000px) and (min-height: 1300px){
-      body{
-        height: 100vh;
-        place-content: center;
-      }
-    }
-
-    @media (min-height: 1000px) and (min-width: 1300px){
-      body{
-        height: 100vh;
-        place-content: center;
-      }
-    }
-  </style>
-</head>
-  <body>
-    <div class="back-model-top"></div>
-    <div class="back-model-bottom"></div>
-    <main>
-      <section class="phone">
-        <div class="phone-indent"></div>
-        <div class="header">
-          <i class="fas fa-chevron-left"></i>
-          <img class="avatar" src="/images/avatar.jpg" alt="">
-          <div class="info">
-            <h1 class="name">Samuel Green</h1>
-            <p class="status">Available to Walk</p>
-          </div>
-          <i class="fas fa-ellipsis-v"></i>
-        </div>
-        
-        <div class="main-body">
-          <div class="messages"> 
-            <p class="message m-l">
-              That sounds great. I’d be happy with that.
-            </p>
-            
-            <p class="message m-l">
-              Could you send over some pictures of your dog, please?
-            </p>    
-
-            <div class="message images">
-              <img src="/images/dog-image-1.jpg" alt="">
-              <img src="/images/dog-image-2.jpg" alt="">
-              <img src="/images/dog-image-3.jpg" alt="">
-            </div>
-            
-            <p class="message m-r">
-              Here are a few pictures. She’s a happy girl!
-            </p>
-            
-            <p class="message m-r">
-              Can you make it?
-            </p>
-            
-            <p class="message m-l">
-              She looks so happy! The time we discussed works. 
-              How long shall I take her out for?
-            </p>
-            
-            <div class="message m-l walk">
-              <div class="first-half">
-                <div class="radio"></div>
-                <p class="walk-time">30 minute walk</p> 
-              </div>
-              <h2 class="price">$29</h2>
-            </div>
-            
-            <div class="message m-l walk">
-              <div class="first-half">
-                <div class="radio"></div>
-                <p class="walk-time">1 hour walk</p>
-              </div>
-              <h2 class="price">$49</h2>
-            </div>
-          </div>
-          <div class="input">
-            <p class="placeholder">Type a message…</p>
-            <i class="fas fa-chevron-circle-right"></i>
-          </div>
-        </div>
-      </section>
-        
-      <section class="low-text">
-        <h1 class="low-t">Simple booking</h1>
-        <p class="low-p">
-          Stay in touch with our dog walkers through the chat interface. This makes it easy to 
-          discuss arrangements and make bookings. Once the walk has been completed you can rate 
-          your walker and book again all through the chat.
-        </p>
-      </section>
-    </main>
-  </body>
+			<section class="low-text">
+				<h1 class="low-t">Simple booking</h1>
+				<p class="low-p">
+					Stay in touch with our dog walkers through the chat interface. This
+					makes it easy to discuss arrangements and make bookings. Once the walk
+					has been completed you can rate your walker and book again all through
+					the chat.
+				</p>
+			</section>
+		</main>
+	</body>
 </html>
